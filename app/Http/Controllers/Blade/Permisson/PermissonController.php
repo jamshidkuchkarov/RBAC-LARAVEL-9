@@ -12,7 +12,7 @@ class PermissonController extends Controller
         $permissions = Permission::with('roles')->paginate(10);
         return view('pages.permissons.index',compact('permissions'));
     }
-    public function add($){
+    public function add(){
         return view('pages.permissions.add');
     }
 }
