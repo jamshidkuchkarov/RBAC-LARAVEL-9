@@ -32,7 +32,7 @@
                                @csrf
                             <div class="mb-3">
                                 <label for="useremail" class="form-label">Email</label>
-                                <input type="email" name="email" class="form-control" id="useremail" placeholder="Enter email" required>
+                                <input type="email" name="email" value="{{old('email')}}" class="form-control" id="useremail" placeholder="Emailingizni kiriting" required>
                                @error('email')
                                 <div class="text-danger">
                                    {{$message}}
@@ -41,30 +41,34 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="username" class="form-label">Username</label>
-                                <input type="text" class="form-control" name="name" id="username" placeholder="Enter username" required>
-                                <div class="invalid-feedback">
-                                    Please Enter Username
+                                <label for="username" class="form-label">Ism</label>
+                                <input type="text" class="form-control" value="{{old('name')}}"  name="name" id="username" placeholder="Ismingizni kiriting" required>
+                                @error('name')
+                                <div class="text-danger">
+                                    {{$message}}
                                 </div>
+                                @enderror
                             </div>
 
                             <div class="mb-3">
-                                <label for="userpassword" class="form-label">Password</label>
-                                <input type="password" name="password" class="form-control" id="userpassword" placeholder="Enter password" required>
-                                <div class="invalid-feedback">
-                                    Please Enter Password
+                                <label for="userpassword" class="form-label">Parol</label>
+                                <input type="password" name="password"  class="form-control" id="userpassword" placeholder="Parolni kiriting" required>
+                                @error('password')
+                                <div class="text-danger">
+                                    {{$message}}
                                 </div>
+                                @enderror
                             </div>
                             <div class="mb-3">
-                                <label for="userpassword" class="form-label">Confirim Password</label>
+                                <label for="userpassword" class="form-label">Parolni tasdiqlash</label>
                                 <input type="password" name="password_confirmation" class="form-control" id="userpassword" placeholder="Enter password" required>
                                 <div class="invalid-feedback">
-                                    Please Enter Password
+                                    Parolni kiriting
                                 </div>
                             </div>
 
                             <div class="mt-4 d-grid">
-                                <button class="btn btn-primary waves-effect waves-light" type="submit">Register</button>
+                                <button class="btn btn-primary waves-effect waves-light" type="submit">Registratsiya</button>
                             </div>
 
 
@@ -76,7 +80,7 @@
             <div class="mt-5 text-center">
 
                 <div>
-                    <p>Already have an account ? <a href="/login" class="fw-medium text-primary"> Login</a> </p>
+                    <p>Allaqachon ro'yhadan o'tganmisz? <a href="{{route('login')}}" class="fw-medium text-primary">Kirish</a> </p>
 
                 </div>
             </div>

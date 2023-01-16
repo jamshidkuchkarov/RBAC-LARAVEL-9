@@ -75,8 +75,9 @@ class RegisterController extends Controller
             Auth::login($user);
             return  redirect()->route('home');
         }
+        return view('notfound');
 
-        return view('auth.login');
+
     }
     public function destroy(Request $request){
         Auth::logout();

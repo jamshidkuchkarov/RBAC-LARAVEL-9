@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Blade\User\UserProfileController;
+use App\Http\Controllers\Blade\Permisson\PermissonController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,4 +36,12 @@ Route::group(['middleware' => 'auth'],function (){
    //users
     Route::get('/profile',[UserProfileController::class,'index'])->name('profile');
 
+
+    // Permissions
+    Route::get('/permissions',[PermissonController::class,'index'])->name('permissionIndex');
+    Route::get('/permission/add',[PermissonController::class,'add'])->name('permissionAdd');
+    Route::post('/permission/create',[PermissonController::class,'create'])->name('permissionCreate');
+    Route::get('/permission/{id}/edit',[PermissonController::class,'edit'])->name('permissionEdit');
+    Route::post('/permission/update/{id}',[PermissonController::class,'update'])->name('permissionUpdate');
+    Route::delete('/permission/delete/{id}',[PermissonController::class,'destroy'])->name('permissionDestroy');
 });

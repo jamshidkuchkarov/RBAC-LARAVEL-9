@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>Starter Page | Skote - Admin & Dashboard Template</title>
+    <title>RBAC LARAVEL 9</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
@@ -152,7 +152,7 @@
                             <span key="t-dashboards">Foydalanuvchini boshqaruvi</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="index.html" key="t-default">Ruxsatlar</a></li>
+                            <li><a href="{{route('permissionIndex')}}" >Ruxsatlar</a></li>
                             <li><a href="dashboard-saas.html" key="t-saas">Rollar</a></li>
                             <li><a href="dashboard-crypto.html" key="t-crypto">Foydalanuvchilar</a></li>
                             <li><a href="dashboard-blog.html" key="t-blog">Blog</a></li>
